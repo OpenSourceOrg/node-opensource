@@ -19,6 +19,7 @@ function request(resource, callback) {
 
     res.on('end', function() {
       let data = JSON.parse(body)
+
       if (data.errors)
         return callback(data.errors, null);
       else
@@ -27,14 +28,17 @@ function request(resource, callback) {
   });
 }
 
+// Get list of all known licenses
 module.exports.all = function all(callback) {
-  return request('/licenses', callback);
+  return request('/licenses/', callback);
 }
 
+// Get license by it's OSI ID
 module.exports.get = function get(id, callback) {
   return request(path.join('/license', id), callback);
 }
 
+// Get license by a keyword
 module.exports.tagged = function tagged(keyword, callback) {
   return request(path.join('/licenses', keyword), callback);
 }
