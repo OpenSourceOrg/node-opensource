@@ -1,0 +1,22 @@
+{
+  "name": "node-opensource",
+  "version": "1.0.0",
+  "description": "Node-opensource is an API Wrapper that allows you to query the Open Source License API with Nodejs.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alex-jose/node-opensource.git"
+  },
+  "keywords": [
+    "opensource.org",
+    "opensource",
+    "license",
+    "API"
+  ],
+  "author": "Alex Jose",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alex-jose/node-opensource/issues"
+  },
+  "homepage": "https://github.com/alex-jose/node-opensource#readme"
+}
