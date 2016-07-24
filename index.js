@@ -2,15 +2,17 @@
 
 const https = require('https');
 const path = require('path');
+const Q = require('q');
 
 function request(resource, callback) {
+  let deferred = Q.defer();
   let options = {
     host: 'api.opensource.org',
     path: resource,
     method: 'GET'
   }
 
-  return https.get(options, function (res) {
+  https.get(options, function (res) {
     let body = '';
 
     res.on('data', function(data) {
@@ -21,11 +23,13 @@ function request(resource, callback) {
       let data = JSON.parse(body)
 
       if (data.errors)
-        return callback(data.errors, null);
+        deferred.reject(data.errors);
       else
-        return callback(null, data);
+        deferred.resolve(data);
     });
   });
+
+  return deferred.promise.nodeify(callback);
 }
 
 // Get list of all known licenses
