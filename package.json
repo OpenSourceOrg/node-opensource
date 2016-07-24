@@ -1,6 +1,6 @@
 {
   "name": "node-opensource",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Node-opensource is an API Wrapper that allows you to query the Open Source License API with Nodejs.",
   "main": "index.js",
   "repository": {
