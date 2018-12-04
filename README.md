@@ -18,7 +18,7 @@ licenses.get("MIT", function(err, data) {
 })
 
 // Get license from keyword
-licenses.get("copyleft", function(err, data) {
+licenses.tagged("copyleft", function(err, data) {
   // Do something with data
 })
 ```
@@ -43,7 +43,7 @@ licenses.get("MIT")
 });
 
 // Get license from keyword
-licenses.get("copyleft")
+licenses.tagged("copyleft")
 .then(function(data) {
   // Do something with data
 }).catch(function(error) {
