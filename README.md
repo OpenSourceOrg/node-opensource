@@ -1,3 +1,6 @@
+<img align="right" width="150" height="200" src="https://opensource.org/files/OSIApproved.png">
+
+
 # Node-opensource
 
 Node-opensource is an API Wrapper that allows you to query the Open Source License API with Nodejs.
